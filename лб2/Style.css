@@ -1,0 +1,20 @@
+body{
+    background-color: #6d6c6c;
+}
+
+table{
+    border-style: solid;
+    border-width: 3px;
+    border-color: black; 
+    border-collapse: collapse; 
+
+   /* background-color: aqua;*/
+} 
+
+th, td{
+    border-style: solid;
+    border-width: 3px;
+    border-color: black; 
+    padding-left: 5px;
+    padding-right: 5px;
+}
