@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap" rel="stylesheet">
+    <title>СР1</title>
+</head>
+<body>
+    <div id="images">
+        <p>скріншоти проходження онлайн ресурсів</p>
+        <img src="src/css.png" alt="">
+        <img src="src/flexbox.png" alt="">
+        <img src="src/grid.png" alt="">
+    </div>
+    <div id="LastYearProject">
+        <p>минулого року я виконував завдання по веб дизайну з використанням технології grid, частину якої наведено нижче</p>
+        <div id="page_end">
+            <div id="page_end_first_half">
+                <img src="src/logo IMG.png" alt="logo" width="167" height="167">
+                <!-- <p id="name3">DND shop</p> -->
+                <p>DND shop</p>
+                <!-- <p id="copiright">Copiright Ⓒ 2022</p> -->
+                <p>Copiright Ⓒ 2022</p>
+            </div>
+            <div id="page_end_Grid">
+                <div class="page_end_Grid_element">
+                    <!-- <p class="contacts_info_catalog">Контакти</p>-->
+                    <p>Контакти</p>
+                    <p>(095) 000 00 00</p>
+                    <p>(097) 000 00 00</p>
+                    <p>ми працюємо цілодобово</p>
+                </div>
+                <div class="page_end_Grid_element"> 
+                    <!-- <p class="contacts_info_catalog">Інформація</p> -->
+                    <p>Інформація</p>
+                    <p>Про нас</p>
+                    <p>Хіт продажу</p>
+                    <p>Відгуки</p>
+                    <p>Доставка і оплата</p>
+                </div>
+                <div class="page_end_Grid_element">
+                    <!-- <p class="contacts_info_catalog">Каталог</p> -->
+                    <p>Каталог</p>
+                    <p>Кістки</p>
+                    <p>Фігурки</p>
+                    <p>Книги</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p>На момент створення сторінки я не володів селекторами css, через що код був ускладнений, що я виправив у цій роботі.</p>
+            <p>При переробці коду я помітив, що і у звертанні через селектори і у використанні айді та класів є свої переваги та недоліки. Використання аді ускладнює частину html, але робить зручніше звертання у css, подібний підхід варто використовувати, якщо елемент знаходиться глибоко у директоріях або є схожі елементи, які можуть бути затронуті селектором, або якщо можливе додавання елементів. Власне для мене легше прописати id="copiright" ніж #LastYearProject > div:last-of-type p</p>
+            <p>Так як у минулорічному проєкті я вже органічно використовував технології grid та flex, розписувати їх у розписанні їх у цій сторінці я не бачу сенсу, а можливості селекторів я вже показав на прикладі одного блоку. З повною версією минулорічної роботою можна ознайомитись за кнопками нижче.</p>
+            <button id="vis">Повний проект</button>
+            <button id="code">Код</button>
+        </div>
+        <script src="code.js"></script>
+    </div>
+</body>
+</html>
