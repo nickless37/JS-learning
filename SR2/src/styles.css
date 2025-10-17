@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+    background-color: #5f5f5f;
+}
+
+#JavaTable th, td{
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    text-align:center;
+}
+
+#JavaTable {
+    border-width: 1px;
+    border-style: solid;
+    border-collapse: collapse;
+    background-color: yellowgreen;
+}
+
+#buttons{
+    background-color: yellowgreen;
+}
+
