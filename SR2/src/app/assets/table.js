@@ -43,7 +43,7 @@ export function movePlayer(direction) {
 
     // new position
     Cells[playerRow][playerCol] = 2;
-    console.log(playerRow, playerCol)
+    // console.log(playerRow, playerCol)
 
     ReloadTable();
 }
@@ -63,3 +63,7 @@ export function ReloadTable() {
     innerHTML += `</table>`;
     document.getElementById("JavaTableDiv").innerHTML = innerHTML;
 }
+
+// export function PositionData(){
+//     console.log(playerRow, playerCol)
+// }

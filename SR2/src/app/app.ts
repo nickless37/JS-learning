@@ -3,6 +3,8 @@ import { Component, signal } from '@angular/core';
 import { createTable } from './assets/table.js';
 // @ts-ignore
 import { movePlayer } from './assets/table.js';
+// // @ts-ignore
+// import { PositionData } from './assets/table.js';
 
 
 @Component({
@@ -22,6 +24,14 @@ import { movePlayer } from './assets/table.js';
   // `,
 
 })
+
+// @Component({
+//   selector: 'app-data',
+//   template: `
+//     pos: {{}}
+//   `,
+// })
+
 export class App{
     ngOnInit() {
       createTable(); 
@@ -32,7 +42,7 @@ export class App{
     moveLeft()  { movePlayer('left'); }
     moveRight() { movePlayer('right'); }
 
-  textbox1 = 'text'
+  textbox1 = 'Протягом роботи я намагався реалізувати можливості angular. Деталізація у фреймворці вражає, але це значно повищує поріг входу. Так як фреймворк використовує переважно ts...'
 }
 
            
