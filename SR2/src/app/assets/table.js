@@ -1,70 +1,54 @@
 let playerRow = 0;
 let playerCol = 0;
+let Cells =[];
 
 function LoadData(){
-    let result = [];
-    for (let i = 0; i < 10; i++) {
-        let row = [];
-        for (let j = 0; j < 10; j++) {
-            row.push( Math.floor(Math.round(Math.random()))); 
+    if(Cells.length === 0){
+        for (let i = 0; i < 10; i++) {
+            let row = [];
+            for (let j = 0; j < 10; j++) {
+                row.push(Math.random() < 0.3 ? 1 : 0); //якщо число менше за 0.3 замынити на 1, інакше на 0
+            }
+            Cells.push(row);
         }
-        result.push(row);
+
+        // player pos
+        Cells[playerRow][playerCol] = 2;
     }
-    result[playerRow][playerCol] = 2;
-    return result;
+    return Cells;
 }
 
 export function createTable(){
-    let Cells = LoadData()             
-
-    let innerHTML = `<table id="JavaTable"`;
-
-    Cells.forEach(row => {
-        innerHTML += `<tr>`;
-        row.forEach(cell => {
-            let color = 'white';
-            if(cell === 1) color = 'black'; 
-            if(cell === 2) color = 'red';   
-            innerHTML += `<td style="background-color:${color};">${cell === 2 ? '2' : ''}</td>`;   //заменить '2' на '' пo оготовности
-        });
-        innerHTML += `</tr>`;
-    });
-
-    innerHTML = innerHTML + `</table>`;
-    
-    let div = document.getElementById("JavaTableDiv");   
-    div.innerHTML = innerHTML;
+    LoadData();  
+    ReloadTable();
 }
 
 export function movePlayer(direction) {
-    let Cells = LoadData(); // current position?
-
-    // player cordinates
-    let pos = { row: 0, col: 0 };
-    for(let i=0;i<10;i++){
-        for(let j=0;j<10;j++){
-            if(Cells[i][j] === 2) {
-                pos = { row: i, col: j };
-            }
-        }
-    }
 
     // previous position clean
-    Cells[pos.row][pos.col] = 0;
+    Cells[playerRow][playerCol] = 0;
 
-    // cord change
-    if(direction === 'up' && pos.row > 0) pos.row--;
-    if(direction === 'down' && pos.row < 9) pos.row++;
-    if(direction === 'left' && pos.col > 0) pos.col--;
-    if(direction === 'right' && pos.col < 9) pos.col++;
+    //new cords
+    let newRow = playerRow;
+    let newCol = playerCol;
+
+    if(direction === 'up' && playerRow > 0 && Cells[playerRow-1][playerCol] !== 1) newRow--;
+    if(direction === 'down' && playerRow < Cells.length-1 && Cells[playerRow+1][playerCol] !== 1) newRow++;
+    if(direction === 'left' && playerCol > 0 && Cells[playerRow][playerCol-1] !== 1) newCol--;
+    if(direction === 'right' && playerCol < Cells[0].length-1 && Cells[playerRow][playerCol+1] !== 1) newCol++;
+
+    // обновляем координаты игрока
+    playerRow = newRow;
+    playerCol = newCol;
 
     // new position
-    Cells[pos.row][pos.col] = 2;
+    Cells[playerRow][playerCol] = 2;
+    console.log(playerRow, playerCol)
 
-    ReloadTable(Cells);
+    ReloadTable();
 }
 
-export function ReloadTable(Cells) {
+export function ReloadTable() {
     let innerHTML = `<table id="JavaTable">`;
     Cells.forEach(row => {
         innerHTML += `<tr>`;
@@ -72,7 +56,7 @@ export function ReloadTable(Cells) {
             let color = 'white';
             if(cell === 1) color = 'black';
             if(cell === 2) color = 'red';
-            innerHTML += `<td style="background-color:${color};">${cell === 2 ? '2' : ''}</td>`; //222222222
+            innerHTML += `<td style="background-color:${color};">${cell === 2 ? '' : ''}</td>`; //замінити '2' на '' після отладки
         });
         innerHTML += `</tr>`;
     });

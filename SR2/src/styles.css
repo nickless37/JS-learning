@@ -20,7 +20,48 @@ body{
     background-color: yellowgreen;
 }
 
+#JavaTableDiv{
+    width: 40%;
+}
+
+
+#screen {
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+
+#prog{
+    width: 100%;
+
+}
+
+
 #buttons{
-    background-color: yellowgreen;
+    width: min-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33% ;
+}
+
+#buttons button{
+    width: 70px ;
+    height: 70px;
+}
+
+/* #buttons :first-child{
+
+    width: 100px ;
+    height: 100px;
+} */
+
+#buttons p{
+    width: 70px;
+    height: 70px;
+    margin: 0%;
+
 }
 

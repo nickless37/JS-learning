@@ -13,13 +13,14 @@ import { movePlayer } from './assets/table.js';
   //сторінку можна прописувати через компоненти, але для мене простіше і звичніше використовувати для цього окремі файли
 
   // template: `
-  //   Hello
+  //   Testing
   // `,
   // styles: `
   //   :host {
   //     color: blue;
   //   }
   // `,
+
 })
 export class App{
     ngOnInit() {
@@ -30,6 +31,8 @@ export class App{
     moveDown()  { movePlayer('down'); }
     moveLeft()  { movePlayer('left'); }
     moveRight() { movePlayer('right'); }
+
+  textbox1 = 'text'
 }
 
            
