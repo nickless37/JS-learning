@@ -7,7 +7,7 @@ function LoadData(){
         for (let i = 0; i < 10; i++) {
             let row = [];
             for (let j = 0; j < 10; j++) {
-                row.push(Math.random() < 0.3 ? 1 : 0); //якщо число менше за 0.3 замынити на 1, інакше на 0
+                row.push(Math.random() < 0.2 ? 1 : 0); //якщо число менше за 0.2 замінити на 1, інакше на 0
             }
             Cells.push(row);
         }
@@ -37,11 +37,10 @@ export function movePlayer(direction) {
     if(direction === 'left' && playerCol > 0 && Cells[playerRow][playerCol-1] !== 1) newCol--;
     if(direction === 'right' && playerCol < Cells[0].length-1 && Cells[playerRow][playerCol+1] !== 1) newCol++;
 
-    // обновляем координаты игрока
+    // new position
     playerRow = newRow;
     playerCol = newCol;
 
-    // new position
     Cells[playerRow][playerCol] = 2;
     // console.log(playerRow, playerCol)
 
@@ -64,6 +63,6 @@ export function ReloadTable() {
     document.getElementById("JavaTableDiv").innerHTML = innerHTML;
 }
 
-// export function PositionData(){
-//     console.log(playerRow, playerCol)
-// }
+export function PositionData(){
+    return [playerRow,playerCol]
+}

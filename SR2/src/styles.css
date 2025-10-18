@@ -27,7 +27,12 @@ body{
 }
 
 #prog{
-    width: 35%;
+    width: 50%;
+    margin: 10px;
+}
+
+#JavaTableDiv{
+    min-width: 300px;
 }
 
 

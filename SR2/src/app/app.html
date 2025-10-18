@@ -6,18 +6,34 @@
 
     <div id="buttons">
       <p></p>
-      <button (click)="moveUp()">Up</button>
+      <button (click)="moveUp(); check()">Up</button>
       <p></p>
-      <button (click)="moveLeft()">Left</button>
+      <button (click)="moveLeft(); check()">Left</button>
       <p></p>
-      <button (click)="moveRight()">Right</button>
+      <button (click)="moveRight(); check()">Right</button>
       <p></p>
-      <button (click)="moveDown()">Down</button>
+      <button (click)="moveDown(); check()">Down</button>
       <p></p>
     </div>
   </div>
   {{textbox1}}
 </div>
+<!-- <button (click)="check()">check</button> -->
+{{textbox2}}
+
+@if(checkup){
+  <span >You are in the end of the field</span>
+} @else {
+  <span>You are not in the end of the field</span>
+}
+
+<!-- <h2>перевірка шаблону</h2>
+
+@if (isServerRunning) {
+  <span>Yes, the server is running</span>
+} @else {
+  <span>No, the server is not running</span>
+} -->
 
 
 
