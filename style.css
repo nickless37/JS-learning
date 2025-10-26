@@ -2,9 +2,13 @@ body{
     background-color: #b0a9b8;
 }
 
-a{
+/* a{
     background-color: #868686;
     padding: 5px;
     border-radius: 5%;
     font-size: 25px;
+} */
+#BT{
+    display: flex;
+    justify-self: center;
 }
