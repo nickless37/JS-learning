@@ -24,3 +24,29 @@
   height: 500px;
   object-fit: cover;
 }
+
+.theme_change_light{
+  background-color: rgb(255, 247, 236);
+  color: #212529;
+}
+
+.theme_change_dark{
+  background-color: #212529;
+  color:  rgb(255, 247, 236);
+}
+
+.themable {
+  transition: all 0.3s ease-in-out;
+}
+
+
+.labelBackground{
+  padding: 1rem 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto;
+  width: auto;
+  bottom: 2rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
