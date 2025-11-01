@@ -50,7 +50,7 @@ function App() {
               alt="Frontend"
 
             />
-            <Carousel.Caption className='bg-dark text-light bg-opacity-75 p-3 rounded labelBackground'>
+            <Carousel.Caption className='bg-dark text-light bg-opacity-75 p-3 rounded labelBackground justify-self-center-custom'>
               <h3>Frontend</h3>
               <p>HTML, CSS</p>
             </Carousel.Caption>
@@ -63,7 +63,7 @@ function App() {
               alt="Backend"
 
             />
-            <Carousel.Caption className='bg-light text-dark bg-opacity-75 p-3 rounded labelBackground'>
+            <Carousel.Caption className='bg-light text-dark bg-opacity-75 p-3 rounded labelBackground justify-self-center-custom'>
               <h3>Backend</h3>
               <p>Java script</p>
             </Carousel.Caption>
@@ -76,7 +76,7 @@ function App() {
               alt="Java"
 
             />
-            <Carousel.Caption className='bg-light text-dark bg-opacity-75 p-3 rounded labelBackground' >
+            <Carousel.Caption className='bg-light text-dark bg-opacity-75 p-3 rounded labelBackground justify-self-center-custom' >
               <h3>Java</h3>
               <p>Java applications</p>
             </Carousel.Caption>
@@ -89,7 +89,7 @@ function App() {
               alt="Python"
 
             />
-            <Carousel.Caption className='bg-light text-dark bg-opacity-75 p-3 rounded labelBackground'>
+            <Carousel.Caption className='bg-light text-dark bg-opacity-75 p-3 rounded labelBackground justify-self-center-custom'>
               <h3>Python</h3>
               <p>Python applications</p>
             </Carousel.Caption>

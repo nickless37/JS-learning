@@ -35,17 +35,15 @@
   color:  rgb(255, 247, 236);
 }
 
-.themable {
+.themeable {
   transition: all 0.3s ease-in-out;
 }
 
 
 .labelBackground{
-  padding: 1rem 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+
   right: auto;
-  width: auto;
+  width: 20%;
   bottom: 2rem;
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
