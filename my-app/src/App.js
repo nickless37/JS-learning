@@ -1,24 +1,26 @@
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import './App.css';
+import React from 'react';
+import { Carousel } from 'react-bootstrap';
 import myPhoto from './images/template1.png';
-import Carousel from 'react-bootstrap/Carousel';
-import Frontend from './images/frontend.png'
-import Backend from './images/backend.png'
-import Java from './images/java.png'
-// import Python from './images/python.png'
-
-
+import Frontend from './images/frontend.png';
+import Backend from './images/backend.png';
+import Java from './images/java.png';
 
 function App() {
   return (
     <div className="App min-vh-100 bg-dark text-light">
-      <header className="App-header" >
-        <h1>
-          Резюме
-        </h1>
-        <div className='about_me d-flex justify-content-center  ms-5 me-5 mt-5'>
-          <img src={myPhoto} className='img-thumbnail ' alt="error" width={210} height={300}   style={{objectFit: "cover",}}/>
+      <header className="App-header">
+        <h1>Резюме</h1>
+        <div className='about_me d-flex justify-content-center ms-5 me-5 mt-5'>
+          <img 
+            src={myPhoto} 
+            className='img-thumbnail' 
+            alt="error" 
+            width={210} 
+            height={300}   
+            style={{objectFit: "cover"}}
+          />
           <div id='B1' className='d-flex align-self-center flex-column direction-colomn justify-self-center-custom'>
             <p>Навчаюся у ДТЕУ</p>
             <p>Факультет Інформаційних Технологій</p>
@@ -26,38 +28,51 @@ function App() {
           </div>
         </div>
       </header>
-      <div id='my works' className='mt-5'>
+      
+      <div id='my works' className='mt-5 container'>
         <h2>Мої роботи</h2>
+        
         <Carousel>
           <Carousel.Item>
-            <img className="img-size-custom" src={Frontend} alt="Frontend"/>
+            <img 
+              className="d-block w-100"
+              src={Frontend} 
+              alt="Frontend"
+              style={{ height: '400px', objectFit: 'cover' }}
+            />
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3>Frontend Development</h3>
+              <p>HTML, CSS, JavaScript projects</p>
             </Carousel.Caption>
           </Carousel.Item>
+          
           <Carousel.Item>
-            <img className="img-size-custom" src={Backend} alt="Backend"/>
+            <img 
+              className="d-block w-100"
+              src={Backend} 
+              alt="Backend"
+              style={{ height: '400px', objectFit: 'cover' }}
+            />
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h3>Backend Development</h3>
+              <p>Server-side applications</p>
             </Carousel.Caption>
           </Carousel.Item>
+          
           <Carousel.Item>
-            <img className="img-size-custom" src={Java} alt="Java"/>
+            <img 
+              className="d-block w-100"
+              src={Java} 
+              alt="Java"
+              style={{ height: '400px', objectFit: 'cover' }}
+            />
             <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
+              <h3>Java Projects</h3>
+              <p>Java applications and systems</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-
-
-
       </div>
-      
     </div>
   );
 }
