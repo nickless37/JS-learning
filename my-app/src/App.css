@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -7,5 +8,19 @@
   pointer-events: none;
 }
 
+.justify-self-center-custom{
+  display: grid;
+  justify-self: center;
+}
 
+#B1{
+  display: flex;
+  justify-self: center;
+  margin-left: 100px;
+  font-size: 25px;
+}
 
+.img-size-custom{
+  height: 500px;
+  object-fit: cover;
+}
