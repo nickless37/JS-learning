@@ -7,8 +7,29 @@ import myPhoto from './images/template1.png';
 import Frontend from './images/frontend.png';
 import Backend from './images/backend.png';
 import Java from './images/java.png';
+import DebagTexture from './images/Debag Texture.png'
+
+
+//кастомный компонент на основі картки з bootstrap
+function AppExpirience({name, description, logo, darkMode}){
+  const classes = `card text-center m-3  ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'} bg-invert`;
+
+
+  return (
+    <div className={classes} style={{ width: '14rem' }}>
+      <img src={logo} className="card-img-top p-3" alt={name} />
+      <div className="card-body">
+        <h5 className="card-title">{name}</h5>
+        <p className="card-text text-muted">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+
 
 function App() {
+  //створення кнопки зміни теми як у минулій роботі 
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
@@ -47,7 +68,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar expand="lg" className={`App-header ${getThemeClasses(darkMode ? 'navbar-dark' : 'navbar-light')}` }>
+      <Navbar expand="lg" className={getThemeClasses(darkMode ? 'navbar-dark' : 'navbar-light')}> 
         <Container className='flex-column direction-colomn justify-self-center-custom '>
           <Navbar.Brand href="#" id='resume'>Резюме</Navbar.Brand>
           <Nav className="ms-auto">
@@ -120,6 +141,62 @@ function App() {
           </Carousel>
         </div>
       </Container>
+
+      <div>
+        <h2 className={getThemeClasses('mt-5 mb-5')}>Маю досвід у інструментах</h2>
+        <div className="d-flex flex-wrap justify-content-center">
+          <AppExpirience
+            name="Autocad"
+            description="Програма для проектування схем деталей"
+            // logo={AutocadLogo}
+            // !
+            logo={DebagTexture}
+            darkMode={darkMode}  
+          />
+          <AppExpirience
+            name="Figma"
+            description="Інструмент для фронтенд проектування "
+            // logo={FigmaLogo}
+            // !
+            logo={DebagTexture}
+            darkMode={darkMode}  
+          />
+          <AppExpirience
+            name="StarUML"
+            description="Інструмент для створення схем та діаграм"
+            // logo={StarUMLLogo}
+            // !
+            logo={DebagTexture}
+            darkMode={darkMode}  
+          />
+          <AppExpirience
+            name="Cisco Packet Tracer"
+            description="Інструмент для побудови схем комп'ютерних мереж"
+            // logo={CPTLogo}
+            // !
+            logo={DebagTexture}
+            darkMode={darkMode}  
+          />
+          <AppExpirience
+            name="Microsoft office"
+            description="Пакет програм різноманітного призначення"
+            // logo={MOLogo}
+            // !
+            logo={DebagTexture}
+            darkMode={darkMode}  
+          />
+          <AppExpirience
+            name="WPS offic"
+            description="Пакет програм різноманітного призначення"
+            // logo={WPSLogo}
+            // !
+            logo={DebagTexture}
+            darkMode={darkMode}  
+          />
+        </div>
+      </div>
+
+
 
 
     </div>

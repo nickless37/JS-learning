@@ -43,8 +43,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#testing{
+.bg-invert{
+  backdrop-filter: brightness(60%);
 
-  display: grid;
-  justify-self: center;
 }
