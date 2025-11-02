@@ -100,10 +100,22 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar expand="lg" className={getThemeClasses(darkMode ? 'navbar-dark' : 'navbar-light')}> 
+      <Navbar expand="lg" className={getThemeClasses(darkMode ? 'navbar-dark' : 'navbar-light')} fixed="top"> 
         {/* я використав navbar для подальшої навігації та роботи з темами компонентів, бо це компонент має вбудовані варіанти тем */}
         <Container className='flex-column direction-colomn justify-self-center-custom '>
-          <Navbar.Brand href="#" id='resume'>Резюме</Navbar.Brand>
+        {/* <Navbar.Brand href="#resume" id='resume'>Резюме</Navbar.Brand> */}
+
+        {/* Навігація */}
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Brand href="#" >Резюме</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#about">Про мене</Nav.Link>
+            <Nav.Link href="#works">Мої роботи</Nav.Link>
+            <Nav.Link href="#instruments">Інструментарій</Nav.Link>
+
+          </Nav>
+          
           <Nav className="ms-auto">
             <Button 
               id="BG_Change"
@@ -113,10 +125,11 @@ function App() {
               {darkMode ? 'Dark' : 'Light'}
             </Button>
           </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      <Container className="mt-4">
+      <Container className="mt-4" id='about'>
         <div className={getThemeClasses('about_me d-flex justify-content-center ms-5 me-5 mt-5 p-4 rounded')}>
           <img 
             src={myPhoto} 
@@ -126,14 +139,14 @@ function App() {
             height={300}   
             style={{objectFit: "cover"}}
           />
-          <div id='B1' className='d-flex align-self-center flex-column direction-colomn justify-self-center-custom'>
+          <div id='B1'  className='d-flex align-self-center flex-column direction-colomn justify-self-center-custom'>
             <p>Навчаюся у ДТЕУ</p>
             <p>Факультет Інформаційних Технологій</p>
             <p>3 курс 13 група</p>
           </div>
         </div>
         
-        <div className={getThemeClasses('mt-5 p-3 rounded')}>
+        <div id='works' className={getThemeClasses('mt-5 p-3 rounded')}>
           <h2>Мої роботи</h2>
           <Carousel>
             <Carousel.Item>
@@ -175,7 +188,7 @@ function App() {
         </div>
       </Container>
 
-      <div>
+      <div id='instruments'>
         <h2 className={getThemeClasses('mt-5 mb-5')}>Маю досвід у інструментах</h2>
         <div className="d-flex flex-wrap justify-content-center">
           <AppExpirience
