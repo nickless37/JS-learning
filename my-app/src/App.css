@@ -8,6 +8,10 @@
   pointer-events: none;
 }
 
+#resume{
+  font-size: 45px;
+}
+
 .justify-self-center-custom{
   display: grid;
   justify-self: center;
@@ -25,26 +29,22 @@
   object-fit: cover;
 }
 
-.theme_change_light{
-  background-color: rgb(255, 247, 236);
-  color: #212529;
-}
-
-.theme_change_dark{
-  background-color: #212529;
-  color:  rgb(255, 247, 236);
-}
-
 .themeable {
   transition: all 0.3s ease-in-out;
 }
 
 
 .labelBackground{
-
-  right: auto;
+  background-color: #212529a6;
+  /* right: auto; */
   width: 20%;
   bottom: 2rem;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#testing{
+
+  display: grid;
+  justify-self: center;
 }
