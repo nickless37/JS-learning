@@ -43,7 +43,3 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.bg-invert{
-  backdrop-filter: brightness(60%);
-
-}

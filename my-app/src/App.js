@@ -12,17 +12,49 @@ import DebagTexture from './images/Debag Texture.png'
 
 //кастомный компонент на основі картки з bootstrap
 function AppExpirience({name, description, logo, darkMode}){
-  const classes = `card text-center m-3  ${darkMode ? 'bg-dark text-light' : 'bg-light text-dark'} bg-invert`;
+  const cardStyle = {
+    width: '14rem',
+    borderRadius: '1rem',
+    transition: 'background-color 0.3s, color 0.3s',
+    backgroundColor: darkMode ? '#2c2f33' : '#f8f9fa',  // контрасніші кольори
+    color: darkMode ? '#f1f1f1' : '#222',               
+    boxShadow: darkMode
+      ? '0 0 10px rgba(255,255,255,0.1)'
+      : '0 0 10px rgba(0,0,0,0.15)',
+  };
+
+  const titleStyle = {
+    fontWeight: 'bold',
+    color: darkMode ? '#ffffff' : '#000000',
+  };
+
+  const textStyle = {
+    fontSize: '0.9rem',
+    color: darkMode ? '#cccccc' : '#333333', 
+  };
 
 
   return (
-    <div className={classes} style={{ width: '14rem' }}>
-      <img src={logo} className="card-img-top p-3" alt={name} />
-      <div className="card-body">
-        <h5 className="card-title">{name}</h5>
-        <p className="card-text text-muted">{description}</p>
-      </div>
+    <div className="card text-center m-3" style={cardStyle}>
+    <img
+      src={logo}
+      className="card-img-top p-3"
+      alt={name}
+      style={{
+        objectFit: 'contain',
+        height: 80,
+        filter: darkMode ? 'brightness(0.9)' : 'none',
+      }}
+    />
+    <div className="card-body">
+      <h5 className="card-title" style={titleStyle}>
+        {name}
+      </h5>
+      <p className="card-text" style={textStyle}>
+        {description}
+      </p>
     </div>
+  </div>
   );
 }
 
@@ -69,6 +101,7 @@ function App() {
   return (
     <div className="App">
       <Navbar expand="lg" className={getThemeClasses(darkMode ? 'navbar-dark' : 'navbar-light')}> 
+        {/* я використав navbar для подальшої навігації та роботи з темами компонентів, бо це компонент має вбудовані варіанти тем */}
         <Container className='flex-column direction-colomn justify-self-center-custom '>
           <Navbar.Brand href="#" id='resume'>Резюме</Navbar.Brand>
           <Nav className="ms-auto">
