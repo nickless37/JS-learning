@@ -1,8 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import { Container, Navbar, Nav, Button } from 'react-bootstrap';
-import { Carousel } from 'react-bootstrap';
+import { Container, Navbar, Nav, Button, Dropdown, Carousel } from 'react-bootstrap';
 
 // foto
 import myPhoto from './images/template1.png';
@@ -27,7 +26,7 @@ function AppExpirience({name, description, logo, darkMode}){
     width: '14rem',
     borderRadius: '1rem',
     transition: 'background-color 0.3s, color 0.3s',
-    backgroundColor: darkMode ? '#2c2f33' : '#f8f9fa',  // контрасніші кольори
+    backgroundColor: darkMode ? '#2c2f33' : '#e4e8ed',  // контрасніші кольори
     color: darkMode ? '#f1f1f1' : '#222',               
     boxShadow: darkMode
       ? '0 0 10px rgba(255,255,255,0.1)'
@@ -126,6 +125,19 @@ function App() {
 
           </Nav>
           
+          <Nav className= "ms-auto ps-4 pe-3" >
+            <Dropdown className='custom-dropdown'>
+              <Dropdown.Toggle className={getThemeClasses('ps-4 pe-3')} >
+                Нинішні проєкти
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu className={`${getThemeClasses()} ${darkMode ? 'dropdown-dark' : 'dropdown-light'}`}>
+                <Dropdown.Item href="https://github.com/nickless37/JS-learning" className={getThemeClasses(darkMode ? 'dropdown-dark' : 'dropdown-light')}>Java script</Dropdown.Item>
+                <Dropdown.Item href="https://github.com/nickless37/cryptographic-methods-of-information-protection-2025" className={getThemeClasses(darkMode ? 'dropdown-dark' : 'dropdown-light')}>Phython</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Nav>
+
           <Nav className="ms-auto">
             <Button 
               className=''
@@ -140,8 +152,8 @@ function App() {
         </Container>
       </Navbar>
 
-      <Container className="mt-4" id='about'>
-        <div className={getThemeClasses('about_me d-flex justify-content-center ms-5 me-5 mt-5 p-4 rounded')}>
+      <Container id='test' className="mt-4" >
+        <div id='about' className={getThemeClasses('about_me d-flex justify-content-center ms-5 me-5 mt-5 p-4 rounded')}>
           <img 
             src={myPhoto} 
             className={`img-thumbnail ${darkMode ? 'border-secondary' : ''}`}
@@ -150,7 +162,7 @@ function App() {
             height={300}   
             style={{objectFit: "cover"}}
           />
-          <div id='B1'  className='d-flex align-self-center flex-column direction-colomn justify-self-center-custom'>
+          <div id='B1' className='d-flex align-self-center flex-column direction-colomn justify-self-center-custom'>
             <p>Навчаюся у ДТЕУ</p>
             <p>Факультет Інформаційних Технологій</p>
             <p>3 курс 13 група</p>
@@ -208,63 +220,61 @@ function App() {
             </Carousel.Item>
           </Carousel>
         </div>
-      </Container>
 
-      <div id='instruments'>
-        <h2 className={getThemeClasses('mt-5 mb-5')}>Маю досвід у інструментах</h2>
-        <div className="d-flex flex-wrap justify-content-center">
-          <AppExpirience
-            name="Autocad"
-            description="Програма для проектування схем деталей"
-            logo={AutocadLogo}
-            // !
-            // logo={DebagTexture}
-            darkMode={darkMode}  
-          />
-          <AppExpirience
-            name="Figma"
-            description="Інструмент для фронтенд проектування "
-            logo={FigmaLogo}
-            // !
-            // logo={DebagTexture}
-            darkMode={darkMode}  
-          />
-          <AppExpirience
-            name="StarUML"
-            description="Інструмент для створення схем та діаграм"
-            logo={StarUMLLogo}
-            // !
-            // logo={DebagTexture}
-            darkMode={darkMode}  
-          />
-          <AppExpirience
-            name="Cisco Packet Tracer"
-            description="Інструмент для побудови схем комп'ютерних мереж"
-            logo={CPTLogo}
-            // !
-            // logo={DebagTexture}
-            darkMode={darkMode}  
-          />
-          <AppExpirience
-            name="Microsoft office"
-            description="Пакет програм різноманітного призначення"
-            logo={MOLogo}
-            // !
-            // logo={DebagTexture}
-            darkMode={darkMode}  
-          />
-          <AppExpirience
-            name="WPS offic"
-            description="Пакет програм різноманітного призначення"
-            logo={WPSLogo}
-            // !
-            // logo={DebagTexture}
-            darkMode={darkMode}  
-          />
+        <div id='instruments'>
+          <h2 className={getThemeClasses('mt-5 mb-5')}>Маю досвід у інструментах</h2>
+          <div className="d-flex flex-wrap justify-content-start">
+            <AppExpirience
+              name="Autocad"
+              description="Програма для проектування схем деталей"
+              logo={AutocadLogo}
+              // !
+              // logo={DebagTexture}
+              darkMode={darkMode}  
+            />
+            <AppExpirience
+              name="Figma"
+              description="Інструмент для фронтенд проектування "
+              logo={FigmaLogo}
+              // !
+              // logo={DebagTexture}
+              darkMode={darkMode}  
+            />
+            <AppExpirience
+              name="StarUML"
+              description="Інструмент для створення схем та діаграм"
+              logo={StarUMLLogo}
+              // !
+              // logo={DebagTexture}
+              darkMode={darkMode}  
+            />
+            <AppExpirience
+              name="Cisco Packet Tracer"
+              description="Інструмент для побудови схем комп'ютерних мереж"
+              logo={CPTLogo}
+              // !
+              // logo={DebagTexture}
+              darkMode={darkMode}  
+            />
+            <AppExpirience
+              name="Microsoft office"
+              description="Пакет програм різноманітного призначення"
+              logo={MOLogo}
+              // !
+              // logo={DebagTexture}
+              darkMode={darkMode}  
+            />
+            <AppExpirience
+              name="WPS offic"
+              description="Пакет програм різноманітного призначення"
+              logo={WPSLogo}
+              // !
+              // logo={DebagTexture}
+              darkMode={darkMode}  
+            />
+          </div>
         </div>
-      </div>
-
-
+      </Container>
 
 
     </div>

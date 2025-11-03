@@ -29,17 +29,40 @@
   object-fit: cover;
 }
 
-.themeable {
-  transition: all 0.3s ease-in-out;
-}
-
-
 .labelBackground{
   background-color: #212529a6;
-  /* right: auto; */
   width: 20%;
   bottom: 2rem;
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+
+.custom-dropdown .dropdown-toggle:focus,
+.custom-dropdown .dropdown-toggle:active {
+  box-shadow: none; 
+
+}
+
+.custom-dropdown .dropdown-toggle {
+  border: 0px solid #ff0000; 
+  border-radius: 8px;
+}
+
+.dropdown-dark {
+  background-color: #2c2f33 !important;
+  border-color: #23272a !important;
+  color: #ebebeb !important;
+}
+
+.dropdown-light {
+  background-color: #e4e8ed !important;
+  border-color: #d0d4d9 !important;
+  color: #000000 !important;
+}
+
+/* body * {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+} */
