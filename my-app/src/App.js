@@ -3,11 +3,22 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { Container, Navbar, Nav, Button } from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
+
+// foto
 import myPhoto from './images/template1.png';
 import Frontend from './images/frontend.png';
 import Backend from './images/backend.png';
 import Java from './images/java.png';
-import DebagTexture from './images/Debag Texture.png'
+import Python from './images/python.png'
+// import DebagTexture from './images/Debag Texture.png'
+
+//apps
+import AutocadLogo from './images/app logos/AutoCAD-logo.jpg'
+import FigmaLogo from './images/app logos/figma.png'
+import StarUMLLogo from './images/app logos/staruml.png'
+import CPTLogo from './images/app logos/CPT.png'
+import MOLogo from './images/app logos/MOffice.png'
+import WPSLogo from './images/app logos/WPSO.png'
 
 
 //кастомный компонент на основі картки з bootstrap
@@ -101,7 +112,6 @@ function App() {
   return (
     <div className="App">
       <Navbar expand="lg" className={getThemeClasses(darkMode ? 'navbar-dark' : 'navbar-light')} fixed="top"> 
-        {/* я використав navbar для подальшої навігації та роботи з темами компонентів, бо це компонент має вбудовані варіанти тем */}
         <Container className='flex-column direction-colomn justify-self-center-custom '>
         {/* <Navbar.Brand href="#resume" id='resume'>Резюме</Navbar.Brand> */}
 
@@ -118,6 +128,7 @@ function App() {
           
           <Nav className="ms-auto">
             <Button 
+              className=''
               id="BG_Change"
               variant={darkMode ? "outline-light" : "outline-dark"}
               onClick={changeTheme}
@@ -184,6 +195,17 @@ function App() {
                 <p>Java projects</p>
               </Carousel.Caption>
             </Carousel.Item>
+            <Carousel.Item>
+              <img 
+                className="img-size-custom"
+                src={Python} 
+                alt="Python"
+              />
+              <Carousel.Caption className='bg-opacity-75 p-3 rounded labelBackground justify-self-center-custom' >
+                <h3>Python</h3>
+                <p>Python projects</p>
+              </Carousel.Caption>
+            </Carousel.Item>
           </Carousel>
         </div>
       </Container>
@@ -194,49 +216,49 @@ function App() {
           <AppExpirience
             name="Autocad"
             description="Програма для проектування схем деталей"
-            // logo={AutocadLogo}
+            logo={AutocadLogo}
             // !
-            logo={DebagTexture}
+            // logo={DebagTexture}
             darkMode={darkMode}  
           />
           <AppExpirience
             name="Figma"
             description="Інструмент для фронтенд проектування "
-            // logo={FigmaLogo}
+            logo={FigmaLogo}
             // !
-            logo={DebagTexture}
+            // logo={DebagTexture}
             darkMode={darkMode}  
           />
           <AppExpirience
             name="StarUML"
             description="Інструмент для створення схем та діаграм"
-            // logo={StarUMLLogo}
+            logo={StarUMLLogo}
             // !
-            logo={DebagTexture}
+            // logo={DebagTexture}
             darkMode={darkMode}  
           />
           <AppExpirience
             name="Cisco Packet Tracer"
             description="Інструмент для побудови схем комп'ютерних мереж"
-            // logo={CPTLogo}
+            logo={CPTLogo}
             // !
-            logo={DebagTexture}
+            // logo={DebagTexture}
             darkMode={darkMode}  
           />
           <AppExpirience
             name="Microsoft office"
             description="Пакет програм різноманітного призначення"
-            // logo={MOLogo}
+            logo={MOLogo}
             // !
-            logo={DebagTexture}
+            // logo={DebagTexture}
             darkMode={darkMode}  
           />
           <AppExpirience
             name="WPS offic"
             description="Пакет програм різноманітного призначення"
-            // logo={WPSLogo}
+            logo={WPSLogo}
             // !
-            logo={DebagTexture}
+            // logo={DebagTexture}
             darkMode={darkMode}  
           />
         </div>
