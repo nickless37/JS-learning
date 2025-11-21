@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "2e91f486-7719-4406-a2a9-b9efd1ccaf20",
+		"name": "My Collection",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50271040",
+		"_collection_link": "https://d-timokhin-fit-13-23-b-d-6257724.postman.co/workspace/dan's-Workspace~2e2274d2-bcdd-402d-86d3-cb92eea1eeeb/collection/50271040-2e91f486-7719-4406-a2a9-b9efd1ccaf20?action=share&source=collection_link&creator=50271040"
+	},
+	"item": [
+		{
+			"name": "Get data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/students/query",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"students",
+						"query"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "б",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "7",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "6",
+							"disabled": true
+						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Post data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 2,\n  \"name\": \"Test Student add\",\n  \"facunty\": \"\",\n  \"group\": \"12\",\n  \"year\": \"\",\n  \"specialty\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/students",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"students"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/students/query?id=2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"students",
+						"query"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "2"
+						},
+						{
+							"key": "id",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "6",
+							"disabled": true
+						},
+						{
+							"key": "id",
+							"value": "7",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/students/query",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"students",
+						"query"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "а",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "о",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "і",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "е",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "и",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update via id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"name\": \"Test Student redacting\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_params}}2",
+					"host": [
+						"{{base_url_params}}2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete via id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_params}}2",
+					"host": [
+						"{{base_url_params}}2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		},
+		{
+			"key": "base_url_params",
+			"value": ""
+		}
+	]
+}

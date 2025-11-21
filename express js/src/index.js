@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+app.use(express.json());
 
 // app.get('/', (req, res) => {
 //   res.send('Hello World!')
@@ -141,6 +142,59 @@ app.get('/students/query', (req, res) => {
 });
 
 
+//на останній парі було розглянуто лише цей функціонал, але так як позначення CRUD також включає створення, редагування і видалення, а також так як я зацікавлений темою, я спробую відтворити цей функціонал
+
+
+//для відправки запитів потрібна спеціальна форма або інструмент(postman)
+
+// Crud - Create
+app.post('/students', (req, res) => {
+  const { id, name, facunty, group, year, specialty } = req.body;
+
+  if (!id) {   //якщо адйі порожне
+    return res.status(400).json({ error: "id is required" });
+  }
+  const exists = students_list.some(s => s.id === id); //some() перевіряє чи хоч один елемент відповідає умові
+  if (exists) {
+    return res.status(400).json({ error: "student with this ID already exists" });
+  }
+
+  //не впевнений на скільки це потрібно і чи замінює це заповнення postman, але спершу задумка була у заповненні даних у разі неповного вводу з інструмента, бо на момент написання я зіштовхувався з різними помилками й подумав, що одна з них від неповного заповнення
+  const student = {
+    id,
+    name: name || "",
+    facunty: facunty || "",
+    group: group || "",
+    year: year || "",
+    specialty: specialty || ""
+  };
+
+  students_list.push(student);
+  res.status(201).json({ message: 'student added', student });
+});
+
+
+//crUd - Update
+app.put('/students/:id', (req, res) => {   //викликається за айді /students/x
+  const id = parseInt(req.params.id);
+  const student = students_list.find(s => s.id === id);
+  if (!student) return res.status(404).json({ error: 'student not found' });
+
+
+  Object.assign(student, req.body); // оновлює поля, що передані в body
+  res.json({ message: 'student updated', student });
+});
+
+
+//cruD - Delete
+app.delete('/students/:id', (req, res) => {   //викликається за айді /students/x
+  const id = parseInt(req.params.id);
+  const index = students_list.findIndex(s => s.id === id);
+  if (index === -1) return res.status(404).json({ error: 'student not found' });
+
+  students_list.splice(index, 1);
+  res.json({ message: 'student deleted' });
+});
 
 
 app.listen(port, () => {
